@@ -10,7 +10,7 @@ func TestGetAPIKey(t *testing.T) {
 	}{
 		"happy":          {header: map[string][]string{"Authorization": {"ApiKey 12345"}}, error: false, expect: "12345"},
 		"no_auth_header": {header: map[string][]string{"uthorization": {"ApiKy 12345"}}, error: true, expect: "no authorization header included"},
-		"bad_key_name":   {header: map[string][]string{"Authorization": {"ApiKy 12345"}}, error: true, expect: "malformed authorization heade"},
+		"bad_key_name":   {header: map[string][]string{"Authorization": {"ApiKy 12345"}}, error: true, expect: "malformed authorization header"},
 	}
 
 	for name, tc := range tests {
